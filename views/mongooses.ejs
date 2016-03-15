@@ -6,15 +6,24 @@
 </head>
 <body>
 
-    <h2>Here are some Awesome Animals</h2>
+    <h2>Here are some <a href="http://localhost:8001/">Awesome Animals</a></h2>
+    <form action='/mongooses/new' method='get'>
+        <input type='submit' value='Add More'>
+    </form>
     <div id= "data">
         <%for(each in animals) {%>
             ID:   <%= animals[each].id %><br>
             Name: <%= animals[each].name %><br>
             Location: <%= animals[each].location %><br>
             Age: <%= animals[each].age %><br>
-            Added: <%= animals[each].when %><br>
+            Added: <%= animals[each].created %><br>
             LMD: <%= animals[each].LMD %><br>
+            <form action='/mongooses/<%= animals[each].id%>/edit' method='get'>
+                <input type='submit' value='Edit'>
+            </form>
+            <form action='/mongooses/<%= animals[each].id%>/destroy' method='get'>
+                <input type='submit' value='Delete'>
+            </form>
             <hr>
         <%} %>
     </div>
