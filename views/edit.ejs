@@ -1,0 +1,24 @@
+<!-- index.ejs for Quoting Dojo Redux -->
+<html>
+<head>
+ <title>Animal Edit</title>
+
+</head>
+<body>
+    <p id="timestamp"></p>
+    <script>
+    document.getElementById("timestamp").innerHTML = Date();
+    </script>
+    <h3>Edit an Animal!</h3>
+    <form action='/mongooses/<%= animals[0].id%>' method='post'>
+        ID: <%= animals[0].id %><br>
+        Animal Name: <input type='text' name='name' value = <%= animals[0].name %> ><br>
+        Location: <input type='text' name='location' value = <%= animals[0].location %> ><br>
+        Age:        <input type='Number' name="age" value = <%= animals[0].age %> ><br>
+        <input type='submit' value='Submit'>
+    </form>
+    <% if(typeof err == 'object' && err) { %>
+        <%= err %>
+    <% } %>
+</body>
+</html>

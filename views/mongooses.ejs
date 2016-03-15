@@ -1,0 +1,23 @@
+<!-- mongoose.ejs for showing Mongoose Dashboard -->
+<html>
+<head>
+ <title>Mongoose Dashboard</title>
+
+</head>
+<body>
+
+    <h2>Here are some Awesome Animals</h2>
+    <div id= "data">
+        <%for(each in animals) {%>
+            ID:   <%= animals[each].id %><br>
+            Name: <%= animals[each].name %><br>
+            Location: <%= animals[each].location %><br>
+            Age: <%= animals[each].age %><br>
+            Added: <%= animals[each].when %><br>
+            LMD: <%= animals[each].LMD %><br>
+            <hr>
+        <%} %>
+    </div>
+
+</body>
+</html>
