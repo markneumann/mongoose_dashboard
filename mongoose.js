@@ -65,7 +65,7 @@ app.get('/mongooses/:id', function(req, res) {                    //show just on
 // new request
 app.get('/mongooses/new', function(req, res) {                    //show blank edit form
     console.log("new path");
-    res.render("edit", {});
+    //res.render("new", {title: "New one"});
 });
 
 // Post new Animal
@@ -118,7 +118,7 @@ app.post('/mongooses/:id', function(req, res) {         // save edit form
     // Try to save that new user to the database (
     //this is the method that actually inserts into the db) and
     // run a callback function with an error (if any) from the operation.
-    Animal.save(function(err) {
+    animal.save(function(err) {
         // if there is an error console.log that something went wrong!
         if (err) {
             console.log('something went wrong');
